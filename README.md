@@ -39,9 +39,6 @@ This project uses `uv`, a Rust-based Python package manager, for environment man
 * **Architecture Notes:** The free tier of Google AI Studio restricts requests to 5 RPM (Requests Per Minute). To prevent `429 RESOURCE_EXHAUSTED` errors during the agentic reasoning loop, a 15-second `time.sleep()` delay was implemented in the FastMCP tools. Additionally, the agent prompt strictly enforces parallel execution for `move_file` commands to conserve API quota.
 
 ## Visual Proof
-
-Here is the state of the `test_dump` folder before and after the agent autonomously organized the files:
-
 ### Before
 ![Before Organizer](before.png)
 
@@ -49,9 +46,6 @@ Here is the state of the `test_dump` folder before and after the agent autonomou
 ![After Organizer](after.png)
 
 ## Sample Input & Output Log
-
-Below is the terminal output demonstrating the Agent's reasoning loop, tool execution (with rate-limit delays), and final response.
-
 ```text
 (janitor-challenge) [realpratz@arch janitor-challenge]$ python level2/client_agent.py
 
